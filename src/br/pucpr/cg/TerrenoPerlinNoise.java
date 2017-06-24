@@ -29,7 +29,7 @@ public class TerrenoPerlinNoise implements Scene{
     private boolean poligonos;
 
     private Keyboard keys = Keyboard.getInstance();
-    private static final String PATH = "C://Users//GabrielLourenço//Desktop//Atividades-Prog3D//TDE//textures//";
+    private static final String PATH = "C:/Users/Gabriel Lourenço/Desktop/Atividades-Prog3D/textures/";
     private Camera camera = new Camera();
     private DirectionalLight light = new DirectionalLight(
             new Vector3f(1.0f, -3.0f, -1.0f),
