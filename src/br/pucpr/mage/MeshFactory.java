@@ -11,10 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Mylla on 19/06/2017.
- * CLASSE MESHFACTORY CRIADA EM AULA E ADAPTADA PARA O TDE
- */
+
 public class MeshFactory  {
     public static Mesh loadTerrain(File file, float scale) throws IOException {
         BufferedImage img = ImageIO.read(file);
@@ -25,7 +22,7 @@ public class MeshFactory  {
         float hw = width / 2.0f;
         float hd = depth / 2.0f;
 
-        // Criação dos vértices
+
         List<Vector3f> positions = new ArrayList<>();
         for (int z = 0; z < depth; z++) {
             for (int x = 0; x < width; x++) {
@@ -34,7 +31,7 @@ public class MeshFactory  {
             }
         }
 
-        //Criação dos índices
+
         List<Integer> indices = new ArrayList<>();
         for (int z = 0; z < depth - 1; z++) {
             for (int x = 0; x < width - 1; x++) {
@@ -54,13 +51,13 @@ public class MeshFactory  {
         }
 
 
-        //Criacao da lista das normais
+
         List<Vector3f> normals = new ArrayList<Vector3f>();
         for (int i = 0; i < positions.size(); i++) {
             normals.add(new Vector3f());
         }
 
-        //Calculo das normais
+
         for (int i = 0; i < indices.size(); i += 3) {
             int i1 = indices.get(i);
             int i2 = indices.get(i+1);
@@ -110,17 +107,12 @@ public class MeshFactory  {
             }
         }
 
-        /**
-         * TDE TEXTURA
-         * VAI DIVIDIR 1.0 PELA CONSTANTE WIDTH * 10 PARA ASSIM APLICAR A TEXTURA. LEVANDO EM CONSIDERAÇÃO QUE A TEXTURA VARIA DE 0.0 A 1.0
-         */
+
         float factorX = 1.0f / width * 10;
         float factorY = 1.0f / depth * 10;
 
-        /**
-         * TDE TEXTURA
-         * CRIAÇÃO DAS COORDENADAS DA TEXTURA, PARA ASSIM SEREM PASSADAS PRO SAHDER
-         */
+
+
         List<Vector2f> coordinates = new ArrayList<>();
         for (int y = 0; y < depth; y++){
             for (int x = 0; x < width; x++) {

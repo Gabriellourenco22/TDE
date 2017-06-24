@@ -92,8 +92,7 @@ public class Window {
         // Set the clear color
         scene.init();
 
-        // Run the rendering loop until the user has attempted to close
-        // the window or has pressed the ESCAPE key.
+
         long before = System.currentTimeMillis() - 1;
         while (glfwWindowShouldClose(window) == GLFW_FALSE) {
             float time = (System.currentTimeMillis() - before) / 1000f;

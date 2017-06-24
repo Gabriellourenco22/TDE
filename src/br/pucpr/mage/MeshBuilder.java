@@ -135,7 +135,7 @@ public class MeshBuilder {
         return this;
     }
 
-    // Final mesh creation
+
 
     public Mesh create() {
         glBindVertexArray(0);
